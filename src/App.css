@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+.hero {
+  background-color: #1a1f1a;
+  color: #ffffff;
+  min-height: 100vh;
+  padding: 80px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero-tag {
+  display: inline-block;
+  background-color: #2e362e;
+  color: #cfd9cf;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 32px;
+}
+
+.hero-title {
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.hero-description {
+  font-size: 18px;
+  color: #b9c2b9;
+  max-width: 600px;
+  line-height: 1.5;
+  margin-bottom: 32px;
+}
+
+.hero-link {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid #4caf50;
+  padding-bottom: 4px;
+}
+
+.hero-link:hover {
+  color: #4caf50;
+}
+.process {
+  background-color: #f4f1ec;
+  padding: 100px 24px;
+  text-align: center;
+}
+
+.process-title {
+  font-size: 40px;
+  font-weight: 800;
+  color: #1a1f1a;
+  margin-bottom: 48px;
+}
+
+.process-steps {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.process-step {
+  background-color: #ffffff;
+  border: 1px solid #dcd8cf;
+  border-radius: 10px;
+  padding: 16px 32px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1f1a;
+  width: 100%;
+}
+
+.process-arrow {
+  font-size: 24px;
+  color: #4caf50;
+  padding: 8px 0;
+}
