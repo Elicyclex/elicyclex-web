@@ -254,3 +254,83 @@ body {
   color: #1a1f1a;
   border: 1px solid #1a1f1a;
 }
+.industries {
+  padding: 80px 40px;
+}
+
+.industries-title {
+  font-size: 40px;
+  font-weight: 800;
+  color: #1a1f1a;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.industries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.industry-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e0d5;
+  border-radius: 16px;
+  padding: 28px 24px;
+}
+
+.industry-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1f1a;
+  margin-bottom: 10px;
+}
+
+.industry-card p {
+  font-size: 14px;
+  color: #6b6558;
+  line-height: 1.5;
+}
+.sustainability {
+  background-color: #14171a;
+  padding: 100px 40px;
+  border-radius: 28px;
+  text-align: center;
+}
+
+.sustainability-title {
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 48px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sustainability-cycle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.cycle-step {
+  background-color: #1f2428;
+  color: #ffffff;
+  border: 1px solid #2e3438;
+  border-radius: 10px;
+  padding: 16px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  width: 100%;
+}
+
+.cycle-arrow {
+  color: #4caf50;
+  font-size: 22px;
+  padding: 8px 0;
+}

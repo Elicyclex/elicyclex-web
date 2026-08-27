@@ -87,6 +87,22 @@ function App() {
           </div>
         </section>
       </div>
+      <div className="section-wrapper">
+        <section className="sustainability">
+          <h2 className="sustainability-title">Built in Botswana. Designed for Africa.</h2>
+          <div className="sustainability-cycle">
+            <div className="cycle-step">Organic Waste</div>
+            <div className="cycle-arrow">↓</div>
+            <div className="cycle-step">BSF Larvae</div>
+            <div className="cycle-arrow">↓</div>
+            <div className="cycle-step">Protein Feed</div>
+            <div className="cycle-arrow">↓</div>
+            <div className="cycle-step">Agriculture</div>
+            <div className="cycle-arrow">↓</div>
+            <div className="cycle-step">More Production</div>
+          </div>
+        </section>
+      </div>
     </>
   );
 }
