@@ -1,6 +1,8 @@
 import './App.css';
+import { useState } from 'react' ;
 
 function App() {
+  const [quantity, setQuantity] = useState(30);
   return (
     <>
       <div className="hero-wrapper">
@@ -80,6 +82,17 @@ function App() {
               <li>Packaging: [INSERT PACKAGING INFO]</li>
               <li>Applications: [INSERT APPLICATIONS]</li>
             </ul>
+            <div className="quantity-selector">
+  <label htmlFor="quantity">Quantity (kg):</label>
+  <input
+    type="number"
+    id="quantity"
+    min="30"
+    step="1"
+    value={quantity}
+    onChange={(e) => setQuantity(Math.max(30, Number(e.target.value)))}
+  />
+</div>
             <div className="product-actions">
               <a href="#contact" className="btn-primary">Request Quote</a>
               <a href="#contact" className="btn-secondary">Order Now</a>
