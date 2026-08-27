@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import AdminDashboard from './AdminDashboard';
 import AdminProduction from './AdminProduction';
+import AdminInventory from './AdminInventory';
 function HomePage() {
   const [quantity, setQuantity] = useState(30);
   const [showOrderForm, setShowOrderForm] = useState(false);
@@ -219,7 +220,7 @@ function App() {
       <Route path="/" element={<HomePage />} />
       <Route path="/admin" element={<AdminDashboard />} />
       <Route path="/admin/production" element={<AdminProduction />} />
-
+<Route path="/admin/inventory" element={<AdminInventory />} />
     </Routes>
   );
 }
