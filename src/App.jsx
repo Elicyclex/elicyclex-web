@@ -1,13 +1,15 @@
 import './App.css';
-import { useState } from 'react' ;
+import { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import AdminDashboard from './AdminDashboard';
 
-function App() {
+function HomePage() {
   const [quantity, setQuantity] = useState(30);
   const [showOrderForm, setShowOrderForm] = useState(false);
-const [orderSubmitted, setOrderSubmitted] = useState(false);
-const [customerName, setCustomerName] = useState('');
-const [customerContact, setCustomerContact] = useState('');
-const [formError, setFormError] = useState('');
+  const [orderSubmitted, setOrderSubmitted] = useState(false);
+  const [customerName, setCustomerName] = useState('');
+  const [customerContact, setCustomerContact] = useState('');
+  const [formError, setFormError] = useState('');
 
   return (
     <>
@@ -88,60 +90,91 @@ const [formError, setFormError] = useState('');
               <li>Packaging: [INSERT PACKAGING INFO]</li>
               <li>Applications: [INSERT APPLICATIONS]</li>
             </ul>
+
             <div className="quantity-selector">
-  <label htmlFor="quantity">Quantity (kg):</label>
-  <input
-    type="number"
-    id="quantity"
-    min="30"
-    step="1"
-    value={quantity}
-    onChange={(e) => setQuantity(Math.max(30, Number(e.target.value)))}
-  />
-</div>
+              <label htmlFor="quantity">Quantity (kg):</label>
+              <input
+                type="number"
+                id="quantity"
+                min="30"
+                step="1"
+                value={quantity}
+                onChange={(e) => setQuantity(Math.max(30, Number(e.target.value)))}
+              />
+            </div>
+
             <div className="product-actions">
               <button className="btn-primary" onClick={() => setShowOrderForm(true)}>Request Quote</button>
-             <button className="btn-secondary" onClick={() => setShowOrderForm(true)}>Order Now</button>
+              <button className="btn-secondary" onClick={() => setShowOrderForm(true)}>Order Now</button>
             </div>
-            {showOrderForm && !orderSubmitted && (
-  <div className="order-form">
-    <h4>Complete Your Order</h4>
-    <p>Ordering {quantity}kg of ELICYCLEX BSF Protein Feed</p>
-    <input type="text" placeholder="Full Name" className="order-input" value={customerName} onChange={(e) => setCustomerName(e.target.value)} />
-    <input type="text" placeholder="Phone or Email" className="order-input" value={customerContact} onChange={(e) => setCustomerContact(e.target.value)} />
-{formError && <p className="form-error">{formError}</p>}
-    <div className="order-form-actions">
-      <button
-        className="btn-primary"
-        onClick={() => {
-  if (!customerName.trim() || !customerContact.trim()) {
-    setFormError('Please fill in your name and contact info.');
-  } else {
-    setFormError('');
-    setOrderSubmitted(true);
-  }
-}}
-      >
-        Submit Order
-      </button>
-      <button
-        className="btn-secondary"
-        onClick={() => setShowOrderForm(false)}
-      >
-        Cancel
-      </button>
-    </div>
-  </div>
-)}
-{orderSubmitted && (
-  <div className="order-confirmation">
-    <p>✓ Order request received for {quantity}kg. We'll contact you shortly.</p>
-  </div>
-)}
 
+            {showOrderForm && !orderSubmitted && (
+              <div className="order-form">
+                <h4>Complete Your Order</h4>
+                <p>Ordering {quantity}kg of ELICYCLEX BSF Protein Feed</p>
+                <input type="text" placeholder="Full Name" className="order-input" value={customerName} onChange={(e) => setCustomerName(e.target.value)} />
+                <input type="text" placeholder="Phone or Email" className="order-input" value={customerContact} onChange={(e) => setCustomerContact(e.target.value)} />
+                {formError && <p className="form-error">{formError}</p>}
+                <div className="order-form-actions">
+                  <button
+                    className="btn-primary"
+                    onClick={() => {
+                      if (!customerName.trim() || !customerContact.trim()) {
+                        setFormError('Please fill in your name and contact info.');
+                      } else {
+                        setFormError('');
+                        setOrderSubmitted(true);
+                      }
+                    }}
+                  >
+                    Submit Order
+                  </button>
+                  <button
+                    className="btn-secondary"
+                    onClick={() => setShowOrderForm(false)}
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            )}
+            {orderSubmitted && (
+              <div className="order-confirmation">
+                <p>✓ Order request received for {quantity}kg. We'll contact you shortly.</p>
+              </div>
+            )}
           </div>
         </section>
       </div>
+
+      <div className="section-wrapper">
+        <section className="industries">
+          <h2 className="industries-title">Industries We Serve</h2>
+          <div className="industries-grid">
+            <div className="industry-card">
+              <h3>Poultry</h3>
+              <p>BSF protein as a potential feed ingredient.</p>
+            </div>
+            <div className="industry-card">
+              <h3>Pig Farming</h3>
+              <p>Potential alternative/additional protein source.</p>
+            </div>
+            <div className="industry-card">
+              <h3>Aquaculture</h3>
+              <p>Potential application in fish feed.</p>
+            </div>
+            <div className="industry-card">
+              <h3>Livestock</h3>
+              <p>Potential applications depending on formulation.</p>
+            </div>
+            <div className="industry-card">
+              <h3>Feed Manufacturers</h3>
+              <p>BSF protein ingredient supply.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
       <div className="section-wrapper">
         <section className="sustainability">
           <h2 className="sustainability-title">Built in Botswana. Designed for Africa.</h2>
@@ -158,25 +191,34 @@ const [formError, setFormError] = useState('');
           </div>
         </section>
       </div>
-      <footer className="footer" id="contact">
-  <div className="footer-content">
-    <h2 className="footer-title">Get in Touch</h2>
-    <p className="footer-text">
-      Interested in ELICYCLEX BSF Protein Feed or partnering with us?
-    </p>
-    <div className="footer-details">
-      <p>Phone: [INSERT PHONE NUMBER]</p>
-      <p>WhatsApp: [INSERT WHATSAPP NUMBER]</p>
-      <p>Email: [INSERT EMAIL ADDRESS]</p>
-      <p>Location: [INSERT LOCATION]</p>
-    </div>
-    <p className="footer-copyright">
-      © {new Date().getFullYear()} ELICYCLEX. Built in Botswana.
-    </p>
-  </div>
-</footer>
 
+      <footer className="footer" id="contact">
+        <div className="footer-content">
+          <h2 className="footer-title">Get in Touch</h2>
+          <p className="footer-text">
+            Interested in ELICYCLEX BSF Protein Feed or partnering with us?
+          </p>
+          <div className="footer-details">
+            <p>Phone: [INSERT PHONE NUMBER]</p>
+            <p>WhatsApp: [INSERT WHATSAPP NUMBER]</p>
+            <p>Email: [INSERT EMAIL ADDRESS]</p>
+            <p>Location: [INSERT LOCATION]</p>
+          </div>
+          <p className="footer-copyright">
+            © {new Date().getFullYear()} ELICYCLEX. Built in Botswana.
+          </p>
+        </div>
+      </footer>
     </>
+  );
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/admin" element={<AdminDashboard />} />
+    </Routes>
   );
 }
 
