@@ -5,6 +5,10 @@ function App() {
   const [quantity, setQuantity] = useState(30);
   const [showOrderForm, setShowOrderForm] = useState(false);
 const [orderSubmitted, setOrderSubmitted] = useState(false);
+const [customerName, setCustomerName] = useState('');
+const [customerContact, setCustomerContact] = useState('');
+const [formError, setFormError] = useState('');
+
   return (
     <>
       <div className="hero-wrapper">
@@ -96,19 +100,27 @@ const [orderSubmitted, setOrderSubmitted] = useState(false);
   />
 </div>
             <div className="product-actions">
-              <a href="#contact" className="btn-primary">Request Quote</a>
+              <button className="btn-primary" onClick={() => setShowOrderForm(true)}>Request Quote</button>
              <button className="btn-secondary" onClick={() => setShowOrderForm(true)}>Order Now</button>
             </div>
             {showOrderForm && !orderSubmitted && (
   <div className="order-form">
     <h4>Complete Your Order</h4>
     <p>Ordering {quantity}kg of ELICYCLEX BSF Protein Feed</p>
-    <input type="text" placeholder="Full Name" className="order-input" />
-    <input type="text" placeholder="Phone or Email" className="order-input" />
+    <input type="text" placeholder="Full Name" className="order-input" value={customerName} onChange={(e) => setCustomerName(e.target.value)} />
+    <input type="text" placeholder="Phone or Email" className="order-input" value={customerContact} onChange={(e) => setCustomerContact(e.target.value)} />
+{formError && <p className="form-error">{formError}</p>}
     <div className="order-form-actions">
       <button
         className="btn-primary"
-        onClick={() => setOrderSubmitted(true)}
+        onClick={() => {
+  if (!customerName.trim() || !customerContact.trim()) {
+    setFormError('Please fill in your name and contact info.');
+  } else {
+    setFormError('');
+    setOrderSubmitted(true);
+  }
+}}
       >
         Submit Order
       </button>

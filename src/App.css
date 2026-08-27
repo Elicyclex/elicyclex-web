@@ -443,3 +443,9 @@ body {
   font-size: 15px;
   font-weight: 600;
 }
+.form-error {
+  color: #c62828;
+  font-size: 13px;
+  margin-top: -6px;
+  margin-bottom: 12px;
+}
