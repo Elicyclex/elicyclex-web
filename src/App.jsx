@@ -4,6 +4,8 @@ import { Routes, Route } from 'react-router-dom';
 import AdminDashboard from './AdminDashboard';
 import AdminProduction from './AdminProduction';
 import AdminInventory from './AdminInventory';
+import AdminOrders from './AdminOrders';
+
 function HomePage() {
   const [quantity, setQuantity] = useState(30);
   const [showOrderForm, setShowOrderForm] = useState(false);
@@ -221,6 +223,7 @@ function App() {
       <Route path="/admin" element={<AdminDashboard />} />
       <Route path="/admin/production" element={<AdminProduction />} />
 <Route path="/admin/inventory" element={<AdminInventory />} />
+<Route path="/admin/orders" element={<AdminOrders />} />
     </Routes>
   );
 }
