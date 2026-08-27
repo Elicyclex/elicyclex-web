@@ -103,6 +103,24 @@ function App() {
           </div>
         </section>
       </div>
+      <footer className="footer" id="contact">
+  <div className="footer-content">
+    <h2 className="footer-title">Get in Touch</h2>
+    <p className="footer-text">
+      Interested in ELICYCLEX BSF Protein Feed or partnering with us?
+    </p>
+    <div className="footer-details">
+      <p>Phone: [INSERT PHONE NUMBER]</p>
+      <p>WhatsApp: [INSERT WHATSAPP NUMBER]</p>
+      <p>Email: [INSERT EMAIL ADDRESS]</p>
+      <p>Location: [INSERT LOCATION]</p>
+    </div>
+    <p className="footer-copyright">
+      © {new Date().getFullYear()} ELICYCLEX. Built in Botswana.
+    </p>
+  </div>
+</footer>
+
     </>
   );
 }
