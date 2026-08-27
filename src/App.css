@@ -449,3 +449,85 @@ body {
   margin-top: -6px;
   margin-bottom: 12px;
 }
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f4f1ec;
+}
+
+.admin-sidebar {
+  width: 240px;
+  background-color: #14171a;
+  padding: 32px 20px;
+  flex-shrink: 0;
+}
+
+.admin-logo {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 900;
+  margin-bottom: 40px;
+}
+
+.admin-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.admin-nav-link {
+  color: #b9c2b9;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 10px 14px;
+  border-radius: 8px;
+}
+
+.admin-nav-link:hover {
+  background-color: #1f2428;
+  color: #ffffff;
+}
+
+.admin-nav-link.active {
+  background-color: #2a2e33;
+  color: #ffffff;
+}
+
+.admin-main {
+  flex: 1;
+  padding: 40px;
+}
+
+.admin-page-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #1a1f1a;
+  margin-bottom: 32px;
+}
+
+.admin-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.admin-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e0d5;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.admin-card-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #6b6558;
+  margin-bottom: 8px;
+}
+
+.admin-card-value {
+  font-size: 24px;
+  font-weight: 800;
+  color: #1a1f1a;
+}
