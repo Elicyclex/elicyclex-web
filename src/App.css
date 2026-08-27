@@ -393,3 +393,53 @@ body {
   font-size: 15px;
   text-align: center;
 }
+.order-form {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #e5e0d5;
+}
+
+.order-form h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1f1a;
+  margin-bottom: 8px;
+}
+
+.order-form p {
+  font-size: 14px;
+  color: #6b6558;
+  margin-bottom: 16px;
+}
+
+.order-input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #d8d2c4;
+  border-radius: 8px;
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+.order-form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.order-form-actions button {
+  flex: 1;
+  border: none;
+  cursor: pointer;
+}
+
+.order-confirmation {
+  margin-top: 20px;
+  padding: 16px;
+  background-color: #e8f5e9;
+  border: 1px solid #a5d6a7;
+  border-radius: 10px;
+  color: #2e7d32;
+  font-size: 15px;
+  font-weight: 600;
+}

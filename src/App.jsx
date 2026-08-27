@@ -3,6 +3,8 @@ import { useState } from 'react' ;
 
 function App() {
   const [quantity, setQuantity] = useState(30);
+  const [showOrderForm, setShowOrderForm] = useState(false);
+const [orderSubmitted, setOrderSubmitted] = useState(false);
   return (
     <>
       <div className="hero-wrapper">
@@ -95,8 +97,36 @@ function App() {
 </div>
             <div className="product-actions">
               <a href="#contact" className="btn-primary">Request Quote</a>
-              <a href="#contact" className="btn-secondary">Order Now</a>
+             <button className="btn-secondary" onClick={() => setShowOrderForm(true)}>Order Now</button>
             </div>
+            {showOrderForm && !orderSubmitted && (
+  <div className="order-form">
+    <h4>Complete Your Order</h4>
+    <p>Ordering {quantity}kg of ELICYCLEX BSF Protein Feed</p>
+    <input type="text" placeholder="Full Name" className="order-input" />
+    <input type="text" placeholder="Phone or Email" className="order-input" />
+    <div className="order-form-actions">
+      <button
+        className="btn-primary"
+        onClick={() => setOrderSubmitted(true)}
+      >
+        Submit Order
+      </button>
+      <button
+        className="btn-secondary"
+        onClick={() => setShowOrderForm(false)}
+      >
+        Cancel
+      </button>
+    </div>
+  </div>
+)}
+{orderSubmitted && (
+  <div className="order-confirmation">
+    <p>✓ Order request received for {quantity}kg. We'll contact you shortly.</p>
+  </div>
+)}
+
           </div>
         </section>
       </div>
