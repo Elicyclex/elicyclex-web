@@ -7,6 +7,10 @@ import AdminInventory from './AdminInventory';
 import AdminOrders from './AdminOrders';
 import AdminCustomers from './AdminCustomers';
 import AdminDeliveries from './AdminDeliveries';
+import AdminSales from './AdminSales';
+import AdminExpenses from './AdminExpenses';
+import AdminProfit from './AdminProfit';
+import AdminSettings from './AdminSettings';
 function HomePage() {
   const [quantity, setQuantity] = useState(30);
   const [showOrderForm, setShowOrderForm] = useState(false);
@@ -227,6 +231,11 @@ function App() {
 <Route path="/admin/orders" element={<AdminOrders />} />
 <Route path="/admin/customers" element={<AdminCustomers />} />
 <Route path="/admin/deliveries" element={<AdminDeliveries />} />
+<Route path="/admin/sales" element={<AdminSales />} />
+<Route path="/admin/expenses" element={<AdminExpenses />} />
+<Route path="/admin/profit" element={<AdminProfit />} />
+<Route path="/admin/settings" element={<AdminSettings />} />
+
     </Routes>
   );
 }
