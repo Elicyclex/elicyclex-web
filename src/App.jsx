@@ -5,6 +5,7 @@ import AdminDashboard from './AdminDashboard';
 import AdminProduction from './AdminProduction';
 import AdminInventory from './AdminInventory';
 import AdminOrders from './AdminOrders';
+import AdminCustomers from './AdminCustomers';
 
 function HomePage() {
   const [quantity, setQuantity] = useState(30);
@@ -224,6 +225,7 @@ function App() {
       <Route path="/admin/production" element={<AdminProduction />} />
 <Route path="/admin/inventory" element={<AdminInventory />} />
 <Route path="/admin/orders" element={<AdminOrders />} />
+<Route path="/admin/customers" element={<AdminCustomers />} />
     </Routes>
   );
 }
