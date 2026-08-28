@@ -6,7 +6,7 @@ import AdminProduction from './AdminProduction';
 import AdminInventory from './AdminInventory';
 import AdminOrders from './AdminOrders';
 import AdminCustomers from './AdminCustomers';
-
+import AdminDeliveries from './AdminDeliveries';
 function HomePage() {
   const [quantity, setQuantity] = useState(30);
   const [showOrderForm, setShowOrderForm] = useState(false);
@@ -226,6 +226,7 @@ function App() {
 <Route path="/admin/inventory" element={<AdminInventory />} />
 <Route path="/admin/orders" element={<AdminOrders />} />
 <Route path="/admin/customers" element={<AdminCustomers />} />
+<Route path="/admin/deliveries" element={<AdminDeliveries />} />
     </Routes>
   );
 }
