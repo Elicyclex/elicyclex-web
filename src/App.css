@@ -634,3 +634,8 @@ body {
     align-items: stretch;
   }
 }
+.quantity-total {
+  font-size: 14px;
+  color: #6b6558;
+  margin-left: 8px;
+}

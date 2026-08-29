@@ -101,16 +101,19 @@ function HomePage() {
             </ul>
 
             <div className="quantity-selector">
-              <label htmlFor="quantity">Quantity (kg):</label>
-              <input
-                type="number"
-                id="quantity"
-                min="30"
-                step="1"
-                value={quantity}
-                onChange={(e) => setQuantity(Math.max(30, Number(e.target.value)))}
-              />
-            </div>
+  <label htmlFor="bags">Number of 30kg Bags:</label>
+  <input
+    type="number"
+    id="bags"
+    min="1"
+    step="1"
+    value={quantity / 30}
+    onChange={(e) => setQuantity(e.target.value === '' ? '' : Number(e.target.value) * 30)}
+    onBlur={(e) => setQuantity(Math.max(1, Number(e.target.value) || 1) * 30)}
+  />
+  <span className="quantity-total">= {quantity}kg</span>
+</div>
+
 
             <div className="product-actions">
               <button className="btn-primary" onClick={() => setShowOrderForm(true)}>Request Quote</button>
