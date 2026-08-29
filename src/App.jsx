@@ -11,6 +11,7 @@ import AdminSales from './AdminSales';
 import AdminExpenses from './AdminExpenses';
 import AdminProfit from './AdminProfit';
 import AdminSettings from './AdminSettings';
+import { supabase } from './supabaseClient';
 function HomePage() {
   const [quantity, setQuantity] = useState(30);
   const [showOrderForm, setShowOrderForm] = useState(false);
@@ -126,14 +127,24 @@ function HomePage() {
                 <div className="order-form-actions">
                   <button
                     className="btn-primary"
-                    onClick={() => {
-                      if (!customerName.trim() || !customerContact.trim()) {
-                        setFormError('Please fill in your name and contact info.');
-                      } else {
-                        setFormError('');
-                        setOrderSubmitted(true);
-                      }
-                    }}
+                    onClick={async () => {
+  if (!customerName.trim() || !customerContact.trim()) {
+    setFormError('Please fill in your name and contact info.');
+  } else {
+    setFormError('');
+    const { error } = await supabase.from('orders').insert({
+      customer_name: customerName,
+      customer_contact: customerContact,
+      quantity: quantity,
+    });
+    if (error) {
+      setFormError('Something went wrong. Please try again.');
+    } else {
+      setOrderSubmitted(true);
+    }
+  }
+}}
+
                   >
                     Submit Order
                   </button>
